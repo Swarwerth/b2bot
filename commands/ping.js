@@ -4,10 +4,9 @@ module.exports =
 {
     data: new SlashCommandBuilder()
         .setName("ping")
-        .setDescription("Replies with Pong!"),
+        .setDescription("Replies with the bot's ping!"),
 
-    async execute(interaction)
-    {
-        await interaction.reply("Pong!");
+    execute(interaction) {
+        interaction.reply({ content: `🏓 Pong: \`${interaction.client.ws.ping} ms\``, ephemeral: true });
     },
 };
